@@ -14,6 +14,7 @@ interface ShortUrlControl {
 })
 export class ShortenFormComponent {
     shortenForm: FormGroup;
+    isSubmitting: boolean;
 
     constructor(private formBuilder: FormBuilder, private shortenService: ShortenServiceService) {
         const controls: ShortUrlControl = {
@@ -21,10 +22,16 @@ export class ShortenFormComponent {
         };
 
         this.shortenForm = this.formBuilder.group(controls);
+        this.isSubmitting = false;
     }
 
-    async onSubmit(formData: ShortUrlControl): Promise<void> {
+    canSubmit(): boolean {
+        return !this.isSubmitting && this.shortenForm.valid;
+    }
+
+    async onSubmit(): Promise<void> {
         try {
+            this.isSubmitting = true;
             const originalUrl: string = this.shortenForm.get('originalUrl').value;
 
             const entry: ShortUrl = await this.shortenService.shortenUrl(originalUrl).toPromise();
@@ -34,6 +41,8 @@ export class ShortenFormComponent {
         } catch (err) {
             console.error(err);
             // We should give UI feedback based on this error.
+        } finally {
+            this.isSubmitting = false;
         }
     }
 }
