@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     margin: auto;
+    overflow: hidden;
 }
 
 .short-url-container {
@@ -14,6 +15,10 @@
 .shortened-response-container a {
     font-family: 'Roboto', sans-serif;
     margin: 0.5em 0;
+}
+
+.shortened-response-container p {
+    color: #2b2b2b;
 }
 
 .shortened-response-container a {
@@ -87,5 +92,25 @@
 @media screen and (max-width: 767px) {
     .shortened-response-container {
         width: 300px;
+    }
+
+    .shortened-response-container p {
+        font-size: 12px;
+    }
+
+    .shortened-response-container a {
+        font-size: 16px;
+    }
+
+    .shortened-response-container .copy-button::after {
+        left: 50%;
+        bottom: -1em;
+        transform: translate(-50%, 75%) scale(0);
+        transform-origin: top center;
+        padding: 0.5em 0;
+    }
+
+    .shortened-response-container .copy-button:hover::after {
+        transform: translate(-50%, 75%) scale(1);
     }
 }

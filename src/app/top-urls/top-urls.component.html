@@ -1,0 +1,13 @@
+<h4 class="top100-title">Top 100 most visited URLs</h4>
+<div class="top100-list-header">
+    <p class="short-url-title">URL</p>
+    <p class="access-count-title">clicks</p>
+</div>
+<div class="top100-container">
+    <ul class="top100-list">
+        <li *ngFor="let entry of top100" class="top100-row">
+            <a class="short-url" [href]="'http://' + entry.shortUrl">{{ entry.shortUrl }}</a>
+            <p class="access-count">{{ entry.accessCount }}</p>
+        </li>
+    </ul>
+</div>

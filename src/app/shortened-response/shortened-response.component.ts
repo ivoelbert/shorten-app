@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { ShortUrl } from '../models/short-url';
+import { NONE_TYPE } from '@angular/compiler/src/output/output_ast';
 
 @Component({
     selector: 'app-shortened-response',
