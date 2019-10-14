@@ -1,6 +1,6 @@
 <form [formGroup]="shortenForm" (ngSubmit)="onSubmit()">
     <div class="fancy-input">
-        <input id="originalUrl" type="text" formControlName="originalUrl" placeholder="Enter your link"/>
+        <input id="originalUrl" type="url" formControlName="originalUrl" placeholder="Enter your link"/>
         <button class="button" type="submit" [disabled]="!canSubmit()">Shorten</button>
     </div>
 </form>
