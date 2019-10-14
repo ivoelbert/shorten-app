@@ -1,5 +1,5 @@
 .shortened-response-container {
-    width: 500px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,7 +22,7 @@
 }
 
 .shortened-response-container a {
-    font-size: 22px;
+    font-size: 20px;
     color: #8c8c8c;
 }
 
