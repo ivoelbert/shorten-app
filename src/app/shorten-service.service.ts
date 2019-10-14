@@ -8,8 +8,8 @@ import { map } from 'rxjs/operators';
     providedIn: 'root',
 })
 export class ShortenService {
-    private apiURL: string = 'http://localhost:3000';
-    private shortURL: string = 'localhost:3000';
+    private apiURL: string = 'https://tinytinylink.herokuapp.com';
+    private shortURL: string = 'tinytinylink.herokuapp.com';
 
     constructor(private http: HttpClient) {}
 
