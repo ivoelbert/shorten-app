@@ -8,9 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShortenFormComponent } from './shorten-form/shorten-form.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
+import { ShortenedResponseComponent } from './shortened-response/shortened-response.component';
 
 @NgModule({
-    declarations: [AppComponent, ShortenFormComponent, AppFooterComponent],
+    declarations: [AppComponent, ShortenFormComponent, AppFooterComponent, ShortenedResponseComponent],
     imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, FormsModule, ReactiveFormsModule, HttpClientModule],
     providers: [],
     bootstrap: [AppComponent],

@@ -7,8 +7,9 @@ import { map } from 'rxjs/operators';
 @Injectable({
     providedIn: 'root',
 })
-export class ShortenServiceService {
+export class ShortenService {
     private apiURL: string = 'http://localhost:3000';
+    private shortURL: string = 'localhost:3000';
 
     constructor(private http: HttpClient) {}
 
@@ -19,10 +20,27 @@ export class ShortenServiceService {
         };
 
         return this.http.post<ShortUrl>(endpoint, body).pipe(
-            map((entry: ShortUrl) => ({
-                ...entry,
-                shortUrl: `${this.apiURL}/${entry.shortUrl}`,
-            }))
+            map(
+                (entry: ShortUrl): ShortUrl => ({
+                    ...entry,
+                    shortUrl: `${this.shortURL}/${entry.shortUrl}`,
+                })
+            )
+        );
+    }
+
+    public getTopN(count: number = 100): Observable<ShortUrl[]> {
+        const endpoint: string = `${this.apiURL}/top?count=${count}`;
+
+        return this.http.get<ShortUrl[]>(endpoint).pipe(
+            map((response: ShortUrl[]) =>
+                response.map(
+                    (entry: ShortUrl): ShortUrl => ({
+                        ...entry,
+                        shortUrl: `${this.shortURL}/${entry.shortUrl}`,
+                    })
+                )
+            )
         );
     }
 }

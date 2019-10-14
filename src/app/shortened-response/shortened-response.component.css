@@ -1,0 +1,91 @@
+.shortened-response-container {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.short-url-container {
+    margin: 0.5em;
+}
+
+.shortened-response-container p,
+.shortened-response-container a {
+    font-family: 'Roboto', sans-serif;
+    margin: 0.5em 0;
+}
+
+.shortened-response-container a {
+    font-size: 22px;
+    color: #8c8c8c;
+}
+
+.shortened-response-container .copy-button {
+    padding: 0.5em;
+    outline: 0;
+    border: solid 1px #d0d0d0;
+    border-radius: 3px;
+    margin-left: 1em;
+    color: #fafafa;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    position: relative;
+}
+
+.shortened-response-container .copy-button.copied {
+    background-color: #7fbf6d;
+}
+
+.shortened-response-container .copy-button::after {
+    content: 'copy';
+    position: absolute;
+    right: -5.5em;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    transform-origin: center left;
+    color: #fafafa;
+    background-color: #2b2b2b90;
+    width: 5em;
+    text-align: center;
+    padding: 0.5em 0;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0;
+    transition: all 200ms;
+}
+
+.shortened-response-container .copy-button.copied::after {
+    content: 'copied!'
+}
+
+.shortened-response-container .copy-button:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+
+.shortened-response-container .copy-button svg * {
+    fill: #2b2b2b;
+}
+
+.shortened-response-container .copy-button.copied svg * {
+    fill: #fafafa;
+}
+
+.shortened-response-container .copy-button:hover,
+.shortened-response-container .copy-button:focus {
+    background-color: #f0f0f0;
+}
+
+.shortened-response-container .copy-button.copied:hover,
+.shortened-response-container .copy-button.copied:focus {
+    background-color: #7fbf6d;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+    .shortened-response-container {
+        width: 300px;
+    }
+}
