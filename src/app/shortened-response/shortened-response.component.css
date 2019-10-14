@@ -99,18 +99,15 @@
     }
 
     .shortened-response-container a {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .shortened-response-container .copy-button::after {
-        left: 50%;
-        bottom: -1em;
-        transform: translate(-50%, 75%) scale(0);
-        transform-origin: top center;
-        padding: 0.5em 0;
+        display: none;
     }
 
-    .shortened-response-container .copy-button:hover::after {
-        transform: translate(-50%, 75%) scale(1);
+    .copy-button-icon {
+        width: 14px;
+        height: 14px;
     }
 }

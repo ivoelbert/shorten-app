@@ -64,4 +64,12 @@
     .top100-list-header {
         width: 100vw;
     }
+
+    .top100-row .short-url {
+        font-size: 12px;
+    }
+
+    .top100-row .access-count {
+        font-size: 14px;
+    }
 }
